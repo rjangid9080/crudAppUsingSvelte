@@ -67,11 +67,13 @@ router.put('/api/users/:id',(req,res)=>{
         return res.status(400).send({message:"Data to update not be empty"})
     }
     const id = req.params.id;
-    usersData.findByIdAndUpdate(id,req.body,{useFindAndModify:false})
+    console.log(req.body);
+    usersData.findByIdAndUpdate(id,req.body,{new :true})
     .then(data=>{
         if(!data){
             res.status(404).send({message:`Cannot Update user with ${id}. Maybe user not found !`})
         }else{
+            console.log(data);
             res.send(data)
         }
     }).catch(err=>{

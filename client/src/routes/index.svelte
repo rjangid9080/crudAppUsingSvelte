@@ -10,11 +10,8 @@
 			.then(res => res.json())
 			.then(data => {
 				$Data = data;
-				//console.log($Data);
 			});
-		// await axios.get('http://localhost:3000/api/users').then(res=>{
-		// 	$Data = res.data;
-		// })
+
 	});
 
 	function deleteUser(id){

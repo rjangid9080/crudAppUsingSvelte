@@ -12,20 +12,12 @@ const app = express();
 require('dotenv').config({path:'config.env'});
 const port = process.env.PORT || 8080
 
+app.use(bodyparser.json());
 app.use(bodyparser.urlencoded({extended:false}));
 app.use(morgan('tiny'));
 app.use(cors());
 
-// let users = [
-//     {
-//         name:"Rohit",
-//         email:"grut.rjangid9080@gmail.com"
-//     }
-// ]
 
-// app.get('/',(req,res)=>{
-//     res.send(users);
-// })
 connectDB();
 app.use('/',route);
 app.get('/',(req,res)=>{

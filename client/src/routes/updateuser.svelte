@@ -13,28 +13,23 @@
 				console.log(userdata);
 			});
 	})
+
 	function updateUser(id) {
 		const url = 'http://localhost:5000/api/users/'+id;
 		fetch(url,{
 			method:'PUT',
-			body:{
-				'_id':userdata._id,
+			headers:{
+				'Content-Type':'application/json'
+			},
+			body:JSON.stringify({
 				'name':userdata.name,
 				'email':userdata.email,
 				'gender':userdata.gender,
 				'status':userdata.status
-			}
+			})
 		})
 		.then(res=>res.json())
 		.then(data=>console.log(data))
-		// console.log(JSON.stringify({
-		// 		_id:userdata._id,
-		// 		name:userdata.name,
-		// 		email:userdata.email,
-		// 		gender:userdata.gender,
-		// 		status:userdata.status
-		// 	}));
-		
 	}
 </script>
 

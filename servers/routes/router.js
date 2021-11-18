@@ -41,7 +41,7 @@ router.post('/api/users',(req,res)=>{
     })
     //save user to the database
     user.save(user).then(data=>{
-        res.redirect("http://localhost:3000/adduser");
+        res.redirect("/adduser");
     }).catch(err=>{
         res.status(500).send({message:err.message || "Some error occured while creating operation"})
     })

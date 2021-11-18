@@ -1,5 +1,6 @@
 const express = require('express');
 const router = express.Router();
+const databaseUrl = "https://crud-app-using-svelte.vercel.app/adduser";
 const usersData = require('../model/model');
 
 router.get('/api/users',(req,res)=>{
@@ -39,7 +40,7 @@ router.post('/api/users',(req,res)=>{
         status:req.body.status
     })
     //save user to the database
-    user.save(user).catch(err=>{
+    user.save(user).then(()=>res.redirect(databaseUrl)).catch(err=>{
         res.status(500).send({message:err.message || "Some error occured while creating operation"})
     })
     

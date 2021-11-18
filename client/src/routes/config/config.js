@@ -1,1 +1,1 @@
-export const dbUrl = "http://localhost:5000/api/users/";
+export const dbUrl = "http://localhost:5000/api/users/" || "https://crud-app-svelte-server.herokuapp.com/";

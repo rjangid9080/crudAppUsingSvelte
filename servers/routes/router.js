@@ -39,9 +39,7 @@ router.post('/api/users',(req,res)=>{
         status:req.body.status
     })
     //save user to the database
-    user.save(user).then(data=>{
-        console.log(data.json())
-    }).catch(err=>{
+    user.save(user).catch(err=>{
         res.status(500).send({message:err.message || "Some error occured while creating operation"})
     })
     

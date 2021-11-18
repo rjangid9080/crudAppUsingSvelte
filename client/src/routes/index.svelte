@@ -3,10 +3,11 @@
 	import { Data } from "./stores/store";
 	import Header from "./components/header.svelte";
 	import { userId } from "./stores/store";
+	import { dbUrl } from "./config/config"
 	//import axios from "axios";
 
 	onMount( () => {
-		 fetch("http://localhost:5000/api/users/")
+		 fetch(dbUrl)
 			.then(res => res.json())
 			.then(data => {
 				$Data = data;
@@ -15,7 +16,7 @@
 	});
 
 	function deleteUser(id){
-		const url = 'http://localhost:5000/api/users/'+id;
+		const url = dbUrl+id;
 		if(confirm("Do you really want to delete this data ")){
 			fetch(url,{
 			method:"DELETE"

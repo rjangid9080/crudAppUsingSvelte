@@ -2,9 +2,10 @@
 	import { onMount } from 'svelte';
 	import Header from './components/header.svelte';
 	import { userId } from './stores/store';
+	import { dbUrl } from './config/config';
 	console.log($userId);
 	let userdata = [];
-	let url = 'http://localhost:5000/api/users/?id=' + $userId;
+	let url = dbUrl+'?id=' + $userId;
 	onMount(() => {
 		fetch(url)
 			.then((res) => res.json())
@@ -15,7 +16,7 @@
 	})
 
 	function updateUser(id) {
-		const url = 'http://localhost:5000/api/users/'+id;
+		const url = dbUrl+id;
 		fetch(url,{
 			method:'PUT',
 			headers:{

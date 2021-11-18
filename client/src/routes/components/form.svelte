@@ -1,11 +1,12 @@
 <script>
+	import { dbUrl } from "../config/config";
 	function submit() {
 		alert('Data added successfully');
 	}
 </script>
 
 <!-- form handling -->
-<form action="http://localhost:5000/api/users" method="POST" id="add_user">
+<form action={dbUrl} method="POST" id="add_user">
 	<div class="new_user">
 		<div class="form-group">
 			<label for="name" class="text-light">Name</label>

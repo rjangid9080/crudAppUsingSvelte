@@ -11,7 +11,7 @@
 			.then((res) => res.json())
 			.then((data) => {
 				userdata = data;
-				console.log(userdata);
+				//console.log(userdata);
 			});
 	})
 
@@ -30,7 +30,12 @@
 			})
 		})
 		.then(res=>res.json())
-		.then(data=>console.log(data))
+		.then(data=>{
+			//console.log(data);
+			alert("Data updated successfully !...")
+			window.location.replace('/');
+	})
+		
 	}
 </script>
 
@@ -64,11 +69,11 @@
 				<div class="form-group">
 					<label for="gender" class="text-light">Gender</label>
 					<div class="radio inline">
-						<input type="radio" id="radio-2" name="gender" value="" />
+						<input type="radio" id="radio-2" name="gender" value="Male" bind:group={userdata.gender} />
 						<label for="radio-2" class="radio-label">Male</label>
 					</div>
 					<div class="radio inline">
-						<input type="radio" id="radio-3" name="gender" value="" />
+						<input type="radio" id="radio-3" name="gender" value="Female" bind:group={userdata.gender}/>
 						<label for="radio-3" class="radio-label">Female</label>
 					</div>
 				</div>
@@ -76,11 +81,11 @@
 				<div class="form-group">
 					<label for="gender" class="text-light">Status</label>
 					<div class="radio inline">
-						<input type="radio" id="radio-4" name="status" value="" />
+						<input type="radio" id="radio-4" name="status" value="Active" bind:group={userdata.status} />
 						<label for="radio-4" class="radio-label">Active</label>
 					</div>
 					<div class="radio inline">
-						<input type="radio" id="radio-5" name="status" value="" />
+						<input type="radio" id="radio-5" name="status" value="Inactive" bind:group={userdata.status} />
 						<label for="radio-5" class="radio-label">Inactive</label>
 					</div>
 				</div>

@@ -73,7 +73,6 @@ router.put('/api/users/:id',(req,res)=>{
         if(!data){
             res.status(404).send({message:`Cannot Update user with ${id}. Maybe user not found !`})
         }else{
-            console.log(data);
             res.send(data)
         }
     }).catch(err=>{

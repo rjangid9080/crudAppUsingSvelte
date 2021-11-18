@@ -2,7 +2,7 @@
 	import { dbUrl } from "../config/config";
 	function submit() {
 		alert('Data added successfully');
-		window.location.replace(/adduser);
+		window.location.replace("/adduser");
 	}
 </script>
 

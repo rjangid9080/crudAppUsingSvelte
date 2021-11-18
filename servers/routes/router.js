@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const databaseUrl = "https://crud-app-svelte-server.herokuapp.com/api/users/adduser"
+const databaseUrl = "https://crud-app-using-svelte.vercel.app/adduser"
 const usersData = require('../model/model');
 
 router.get('/api/users',(req,res)=>{
